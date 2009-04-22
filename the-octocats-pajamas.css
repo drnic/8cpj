@@ -1,0 +1,63 @@
+#dashboard .repos #repo_listing .public{
+  background-color: transparent;
+  border: none;
+  border-top: solid 1px #CCC;
+}
+#repo_listing li.public img {
+  display: none;
+}
+ul.repo-detail {
+  float: right;
+  display: block;
+  list-style: none;
+}
+ul.repo-detail li {
+  float: right;
+  margin: 0; padding: 0;
+  line-height: 16px;
+}
+ul.repo-detail li a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0; padding: 0;
+  line-height: 16px;
+}
+ul.repo-detail li strong {
+  margin: 0; padding: 0;
+  line-height: 16px;
+}
+li.repo-forks {
+  background: #FCA;
+  clear: left;
+}
+li.repo-forks:hover {
+  background: #555;
+  color: #FCA;
+  cursor: pointer;
+}
+li.repo-watchers {
+  background: #DFA;
+}
+li.repo-watchers:hover {
+  background: #555;
+  color: #DFA;
+  cursor: pointer;
+}
+li.repo-issues {
+  background: #FAD;
+}
+li.repo-issues:hover {
+  background: #555;
+  color: #FAD;
+  cursor: pointer;
+}
+span.repo-commit a {
+  font-size: 12px;
+  color: #555;
+}
+span.repo-commit a:hover {
+  background: #555;
+  color: #EEE;
+  cursor: pointer;
+}
