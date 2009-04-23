@@ -13,7 +13,7 @@ function _8cpj_sort_by(sort_funk) {
     return sort_funk(repoA, repoB);
   });
 
-  var ul = $('#repo_listing')
+  var ul = $('#repo_listing');
   $.each(list, function(i, li) {
     ul.append(li[0]);
   });
@@ -48,11 +48,11 @@ function _8cpj_by_forks() {
 function _8cpj_completed() {
 }
 
-$("#repo-sorts").html("Sort by: <a href='javascript:_8cpj_by_commit();'>last commit</a>, " +
-  "<a href='javascript:_8cpj_by_issues();'>issues</a>, " +
-  "<a href='javascript:_8cpj_by_forks();'>forks</a>, "+
-  "<a href='javascript:_8cpj_by_watchers();'>watchers</a>");
+$("#repo-sorts").html("Sort by: <a id='sort-by-last-commit' href='javascript:_8cpj_by_commit();'>last commit</a>, " +
+  "<a id='sort-by-issues' href='javascript:_8cpj_by_issues();'>issues</a>, " +
+  "<a id='sort-by-forks' href='javascript:_8cpj_by_forks();'>forks</a>, "+
+  "<a id='sort-by-watchers' href='javascript:_8cpj_by_watchers();'>watchers</a>");
 
-if (_8cpj_version != '1.1') {
+if (typeof _8cpj_version != 'undefined' && _8cpj_version != '1.1') {
   $("#repo-sorts").prepend("<div id='update8cpj'><strong>Hey!</strong> <a href='http://whytheluckystiff.net/greasy/the-octocats-pajamas.user.js'>An update</a> for The Octocat's Pajamas (1.2)</div>");
 }
