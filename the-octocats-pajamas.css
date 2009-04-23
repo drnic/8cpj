@@ -1,3 +1,12 @@
+#repo-sorts {
+  padding: 2px 0;
+  color: #777;
+}
+#update8cpj {
+  border: solid 1px #CC7;
+  background: #FFC;
+  padding: 2px 6px;
+}
 #dashboard .repos #repo_listing .public{
   background-color: transparent;
   border: none;

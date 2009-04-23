@@ -274,7 +274,8 @@
 // @description   An experimental Github user page, organizing your repos. 
 // @include       https://github.com/
 // @include       https://github.com/home
-// @version       1.0
+// @include       http://github.com/8cpj
+// @version       1.1
 // ==/UserScript==
 
 /*
@@ -303,6 +304,10 @@
   var GH = 'http://github.com.nyud.net/api/v2/json';
   // var GH = 'http://github.com/api/v2/json';
 
+  var repos = {};
+  var head = document.getElementsByTagName("head")[0];
+  var completed = false;
+
   var get_issues = function(repo) {
     GM_xmlhttpRequest({
       method: 'GET', 
@@ -312,6 +317,7 @@
         repo.issues = data.issues;
         $('#issues-' + repo.name).append("<a href='" + repo.url + "/issues'><strong>" +
            data.issues.length + "</strong> issues</a>");
+        button_up(repo);
       }
     });
   }
@@ -323,8 +329,10 @@
       onload: function(resp) {
         eval("var data = " + resp.responseText + ";");
         repo.commits = data.commits;
+        repo.last_commit = $.timeago.parse(data.commits[0].committed_date);
         $('#commit-' + repo.name).append("<a href='" + repo.url + "/commits'>" +
           "last commit <strong>" + $.timeago(data.commits[0].committed_date) + "</strong></a>");
+        button_up(repo);
       }
     });
   }
@@ -342,38 +350,65 @@
     });
   }
 
+  var button_up = function(repo) {
+    repo.loaded++;
+    if (completed) return;
+
+    var done = true;
+    $.each(repos, function(i, r) {
+      if (r.loaded < 2) done = false;
+    });
+
+    if (done) {
+      _8cpj_completed();
+      completed = true;
+    }
+  }
+
   var put_on_pajamas = function() {
     GM_xmlhttpRequest({
       method: 'GET', 
       url: GH + '/repos/show/' + $.user,
       onload: function(resp) {
-        var repos = {};
         eval("var data = " + resp.responseText + ";");
         $.each(data.repositories, function(i, repo) {
-          repos[repo.name] = repo;
+          if (!repo.private) {
+            repos[repo.name] = repo;
+            repo.loaded = 0;
+          }
         });
 
+        unsafeWindow._8cpj_version = "1.1";
+        unsafeWindow._8cpj_repos = repos;
         $('#repo_listing li.public').each(function(i, li) {
-          var li = $(li);
-          var name = li.text().replace(/^\s+|\s+$/g,"");
+          var node = $(li);
+          var name = node.text().replace(/^\s+|\s+$/g,"");
           var repo = repos[name];
-          li.append(" <span class='repo-commit' id='commit-" + name + "'></span>" +
+          node.append(" <span class='repo-commit' id='commit-" + name + "'></span>" +
             "<ul class='repo-detail'>" + 
             "<li class='repo-forks' id='forks-" + name + "'>" + 
-              "<a href='" + repo.url + "/network'><strong>" + repo.forks + "</strong> forked</a></li>" +
+              "<a href='" + repo.url + "/network'><strong>" + repo.forks +
+              "</strong> forked</a></li>" +
             "<li class='repo-watchers' id='watchers-" + name + "'>" +
-              "<a href='" + repo.url + "/watchers'><strong>" + repo.watchers + "</strong> watching</a></li>" +
+              "<a href='" + repo.url + "/watchers'><strong>" + repo.watchers +
+              "</strong> watching</a></li>" +
             "<li class='repo-issues' id='issues-" + name + "'></li>" +
             "</ul><br clear='all' />");
           get_issues(repo);
           get_commits(repo);
           // get_network(repo);
         });
+
+        var script = document.createElement("script");
+        script.setAttribute("language", "javascript");
+        script.setAttribute("src", "http://whytheluckystiff.net/greasy/the-octocats-pajamas.js");
+        head.appendChild(script);
       }
     });
+
+    $("#repo_filter").after("<div id='repo-sorts'>The Octocat's Pajamas are buttoning...</div>");
   }
 
-  var head = document.getElementsByTagName("head")[0];
   var style = document.createElement("link");
   style.setAttribute("type", "text/css");
   style.setAttribute("rel", "stylesheet");
