@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>
+      JavaScript unit test file
+    </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="../assets/jsunittest.js" type="text/javascript"></script>
+    <script src="../assets/jshoulda.js" type="text/javascript"></script>
+    <script type="text/javascript">
+// <![CDATA[
+    document['__running_tests'] = true;
+
+    // Stub out values expected from github via GM's unsafeWindow
+    window.unsafeWindow = window;
+    window.github_user = 'why';
+    
+    // stubbing out greasemonkey's AJAX call for the moment
+    var GM_xmlhttpRequest = function() {
+
+    };
+    // ]]>
+    </script>
+    <script src="../../src/the-octocats-pajamas.user.js" type="text/javascript">
+</script>
+    <script src="../../src/the-octocats-pajamas.js" type="text/javascript">
+</script>
+    <link rel="stylesheet" href="../assets/github.css" type="text/css" />
+    <link rel="stylesheet" href="../../src/the-octocats-pajamas.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/unittest.css" type="text/css" />
+  </head>
+  <body>
+    <div id="content">
+      <div id="header">
+        <h1>
+          JavaScript unit test file
+        </h1>
+        <p>
+          This file tests <strong>homepage.js</strong>.
+        </p>
+      </div><!-- Log output (one per Runner, via {testLog: "testlog"} option)-->
+      <div id="testlog"></div><!-- Put sample/test html here -->
+      <div id="sample">
+        <div id="dashboard">
+          <div class="news">
+            <h1>
+              News Feed&nbsp; <a href="/drnic.private.atom?token=6c131adb79448cb80d166b448c446fb2"><img title="Subscribe to your personalized GitHub Feed" src="http://assets0.github.com/images/icons/feed.png?339793eb4081da3b919954561b1d1d75c5d2f7f7" alt="feed" /></a>
+            </h1>
+            <ul class="feed_filter">
+              <li>for you |
+              </li>
+              <li>
+                <a href="/dashboard/yours">from you</a>
+              </li>
+            </ul>
+            <div class="alert fork">
+              <div class="body">
+                <div class="title">
+                  <a href="/mischa">mischa</a> <span>forked</span> <a href="http://github.com/pullmonkey/open_flash_chart/tree">pullmonkey/open_flash_chart</a> <abbr title="2009-04-23 01:57:18"><abbr title="2009-04-23 01:57:18" class="relatize">about an hour ago</abbr></abbr>
+                </div>
+                <div class="details">
+                  <div class="gravatar">
+                    <img width="30" height="30" src="http://www.gravatar.com/avatar/ff937b6907db49432c980f2b6a5c7e71?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" alt="" />
+                  </div>
+                  <div class="message">
+                    Forked repository is at <a href="http://github.com/mischa/open_flash_chart/tree">mischa/open_flash_chart</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alert watch_started">
+              <div class="body">
+                <div class="title">
+                  <a href="/mischa">mischa</a> <span>started watching</span> <a href="http://github.com/pullmonkey/open_flash_chart/tree">pullmonkey/open_flash_chart</a> <abbr title="2009-04-23 01:56:59"><abbr title="2009-04-23 01:56:59" class="relatize">about an hour ago</abbr></abbr>
+                </div>
+                <div class="details">
+                  <div class="gravatar">
+                    <img width="30" height="30" src="http://www.gravatar.com/avatar/ff937b6907db49432c980f2b6a5c7e71?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" alt="" />
+                  </div>
+                  <div class="message">
+                    open_flash_chart's description:
+                    <blockquote>
+                      The ruby on rails plugin for teethgrinder's Open Flash Chart (version 2)
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alert commit_comment">
+              <div class="body">
+                <div class="title">
+                  <a href="/fesplugas">fesplugas</a> <span>commented</span> on <a href="http://github.com/rails/rails/tree">rails/rails</a> <abbr title="2009-04-22 23:41:07"><abbr title="2009-04-22 23:41:07" class="relatize">about 3 hours ago</abbr></abbr>
+                </div>
+                <div class="details">
+                  <div class="gravatar">
+                    <img width="30" height="30" src="http://www.gravatar.com/avatar/49c17982cfd64c006ccfdf32d471ba14?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" alt="" />
+                  </div>
+                  <div class="message">
+                    Comment in <a href="http://github.com/rails/rails/commit/0a132c2fe13fb2b8d5dade9cf6abd70601376287#comments">0a132c2</a>:
+                    <blockquote title="Not a diff parsing error. There's an extra 't' at the end of that hash.">
+                      <p>
+                        Not a diff parsing error. There's an extra 't' at the end of that hash.
+                      </p>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alert follow">
+              <div class="body">
+                <div class="title">
+                  <a href="/DougMaier">DougMaier</a> <span>started following</span> <a href="/drnic">drnic</a> <abbr title="2009-04-22 21:03:36"><abbr title="2009-04-22 21:03:36" class="relatize">about 6 hours ago</abbr></abbr>
+                </div>
+                <div class="details">
+                  <div class="gravatar">
+                    <img width="30" height="30" src="http://www.gravatar.com/avatar/cb2b768a5e546b24052ea03334e43676?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" alt="" />
+                  </div>
+                  <div class="message">
+                    drnic has 83 public repos and 428 followers.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alert member_add">
+              <div class="body">
+                <div class="title">
+                  <a href="/mocra">mocra</a> <span>added</span> <a href="/sync">sync</a> to <a href="http://github.com/mocra/oakley-surfreport/tree">oakley-surfreport</a> <abbr title="2009-04-22 18:32:57"><abbr title="2009-04-22 18:32:57" class="relatize">about 8 hours ago</abbr></abbr>
+                </div>
+                <div class="details">
+                  <div class="gravatar">
+                    <img width="30" height="30" src="http://www.gravatar.com/avatar/478769e4a6f15c4dd8dc52b2e0f4137a?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" alt="" />
+                  </div>
+                  <div class="message">
+                    oakley-surfreport is at <a href="http://github.com/mocra/oakley-surfreport/tree">mocra/oakley-surfreport</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="repos">
+            <h1>
+              Your Repositories <a href="/repositories/new">(create a new one)</a>
+            </h1>
+            <div id="repo_filter">
+              <a rel="public, li.private" class="repo_filter filter_selected" href="#">all</a> | <a rel="public" class="repo_filter" href="#">public</a> | <a rel="private" class="repo_filter" href="#">private</a> | <a rel="source" class="repo_filter" href="#">sources</a> | <a rel="fork" class="repo_filter" href="#">forks</a>
+            </div>
+            <ul id="repo_listing">
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/why/8cpj/tree">8cpj</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/blinksale-greasemonkey/tree">blinksale-greasemonkey</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/choctop/tree">choctop</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/codex/tree">codex</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/codex-tmbundle/tree">codex-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/comment_replies/tree">comment_replies</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/composite_primary_keys/tree">composite_primary_keys</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/copy-as-rtf-tmbundle/tree">copy-as-rtf-tmbundle</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/cropsquare/tree">cropsquare</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/cucumber/tree">cucumber</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/cucumber-tmbundle/tree">cucumber-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/datamapper-tmbundle/tree">datamapper-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/default-twitter-auth-app/tree">default-twitter-auth-app</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/dr-nic-magic-awesome/tree">dr-nic-magic-awesome</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/dr-nic-magic-models/tree">dr-nic-magic-models</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/drnic-presentations/tree">drnic-presentations</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/drnic_js_test_helpers/tree">drnic_js_test_helpers</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/drnicwilliams/tree">drnicwilliams</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/fireunit/tree">fireunit</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/fmdb-migration-manager/tree">fmdb-migration-manager</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/gemjour/tree">gemjour</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/gemsonrails/tree">gemsonrails</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/github-badges/tree">github-badges</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/github-commit-badge/tree">github-commit-badge</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/github-gem/tree">github-gem</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/github-tmbundle/tree">github-tmbundle</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/gitjour/tree">gitjour</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/google-gears-mechanizations/tree">google-gears-mechanizations</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/highrise-greasemonkey/tree">highrise-greasemonkey</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/hillegass-macruby/tree">hillegass-macruby</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/hobo-meeting-app/tree">hobo-meeting-app</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/hobo-tmbundle/tree">hobo-tmbundle</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/hobocentral/tree">hobocentral</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/hoe/tree">hoe</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/html-tmbundle/tree">html-tmbundle</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/idofme/tree">idofme</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/imindi/tree">imindi</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/imindi-blog/tree">imindi-blog</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/injour/tree">injour</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/iphoneruby/tree">iphoneruby</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/javascript-jquery-tmbundle/tree">javascript-jquery-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/javascript-unittest-tmbundle/tree">javascript-unittest-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/jekyll_generator/tree">jekyll_generator</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/jessica/tree">jessica</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/jsunittest/tree">jsunittest</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/machinist/tree">machinist</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/macruby-examples/tree">macruby-examples</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/macruby-tmbundle/tree">macruby-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/magic_metaclass/tree">magic_metaclass</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/magic_model_generator/tree">magic_model_generator</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/magic_multi_connections/tree">magic_multi_connections</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/merb-tmbundle/tree">merb-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/my_cashflow/tree">my_cashflow</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/newgem/tree">newgem</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/newjs/tree">newjs</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/ninja-search-cocoa-widget/tree">ninja-search-cocoa-widget</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/nu-tmbundle/tree">nu-tmbundle</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/numbr5/tree">numbr5</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/oakley-surfline/tree">oakley-surfline</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/objective-c-iphone-tmbundle/tree">objective-c-iphone-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/osdc/tree">osdc</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/pastie-packer/tree">pastie-packer</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/personal-rails-generators/tree">personal-rails-generators</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rails/tree">rails</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rails-footnotes/tree">rails-footnotes</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rails-templates/tree">rails-templates</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rbiphonetest/tree">rbiphonetest</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/roro-faces/tree">roro-faces</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rspec/tree">rspec</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rspec-multi-matchers/tree">rspec-multi-matchers</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rspec-rails/tree">rspec-rails</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rspec-tmbundle/tree">rspec-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rubigen/tree">rubigen</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-c-extensions-tmbundle/tree">ruby-c-extensions-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-doctest-tmbundle/tree">ruby-doctest-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-machinist-tmbundle/tree">ruby-machinist-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-on-rails-tmbundle/tree">ruby-on-rails-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-shoulda-tmbundle/tree">ruby-shoulda-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-state-machine-tmbundle/tree">ruby-state-machine-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/ruby-tmbundle/tree">ruby-tmbundle</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rubyamp/tree">rubyamp</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rubycocoa-cloned-apps/tree">rubycocoa-cloned-apps</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/rubycocoa-tmbundle/tree">rubycocoa-tmbundle</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/sake/tree">sake</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/sake-tasks/tree">sake-tasks</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/shoes-tmbundle/tree">shoes-tmbundle</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/sparkleology/tree">sparkleology</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/spinelladevelopments-wp/tree">spinelladevelopments-wp</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/sportsbet/tree">sportsbet</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/sv-ide/tree">sv-ide</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/tabtab/tree">tabtab</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/timesheets/tree">timesheets</a></b>
+              </li>
+              <li class="public source">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/tranexp/tree">tranexp</a></b>
+              </li>
+              <li class="public fork">
+                <img alt="public" src="/images/icons/public.png" /> <b><a href="/drnic/twitter/tree">twitter</a></b>
+              </li>
+              <li class="private source">
+                <img alt="private" src="/images/icons/private.png" /> <b><a href="/drnic/twittercampaigner/tree">twittercampaigner</a></b>
+              </li>
+            </ul>
+          </div>
+          <div class="repos watching">
+            <h1>
+              Watched Repositories
+            </h1>
+            <ul>
+              <li class="public">
+                <img alt="public" src="/images/icons/public.png" /> <a href="/why">why</a> / <b><a href="/why/8cpj/tree">8cpj</a></b>
+              </li>
+              <li class="public">
+                <img alt="public" src="/images/icons/public.png" /> <a href="/technoweenie">technoweenie</a> / <b><a href="/technoweenie/attachment_fu/tree">attachment_fu</a></b>
+              </li>
+              <li class="public">
+                <img alt="public" src="/images/icons/public.png" /> <a href="/seattlerb">seattlerb</a> / <b><a href="/seattlerb/zentest/tree">zentest</a></b>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+// <![CDATA[
+
+context("Homepage", {
+  setup: function() {
+
+  }},
+  should("run tests", function() {
+    this.assert(true);
+  })
+)();
+// ]]>
+    </script>
+  </body>
+</html>

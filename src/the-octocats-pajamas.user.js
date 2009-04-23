@@ -400,22 +400,14 @@
           // get_network(repo);
         });
 
-        var script = document.createElement("script");
-        script.setAttribute("language", "javascript");
-        script.setAttribute("src", "http://whytheluckystiff.net/greasy/the-octocats-pajamas.js");
-        head.appendChild(script);
+        if (!am_running_tests()) {
+          load_latest_pajamas();
+        }
       }
     });
 
     $("#repo_filter").after("<div id='repo-sorts'>The Octocat's Pajamas are buttoning...</div>");
   }
-
-  var style = document.createElement("link");
-  style.setAttribute("type", "text/css");
-  style.setAttribute("rel", "stylesheet");
-  style.setAttribute("media", "screen");
-  style.setAttribute("href", "http://whytheluckystiff.net/greasy/the-octocats-pajamas.css");
-  head.appendChild(style);
 
   var until_we_re_ready = function() {
     var $ = jQuery;
@@ -423,6 +415,30 @@
     load_timeago($);
     put_on_pajamas();
   }
+  
+  /*
+   * Dynamic loading of code and style
+   * Placed into helper functions so they can be stubbed out for unit testing
+   */
+  var load_latest_pajamas = function() {
+    var script = document.createElement("script");
+    script.setAttribute("language", "javascript");
+    script.setAttribute("src", "http://whytheluckystiff.net/greasy/the-octocats-pajamas.js");
+    head.appendChild(script);
+  };
+  
+  var wear_blue_and_white_pajamas = function() {
+    var style = document.createElement("link");
+    style.setAttribute("type", "text/css");
+    style.setAttribute("rel", "stylesheet");
+    style.setAttribute("media", "screen");
+    style.setAttribute("href", "http://whytheluckystiff.net/greasy/the-octocats-pajamas.css");
+    head.appendChild(style);
+  };
+  
+  var am_running_tests = function() {
+    return document['__running_tests'];
+  };
 
   /*
    * timeago: a jQuery plugin, version: 0.7.1 (2009-02-18)
@@ -548,6 +564,10 @@
     if ($.browser.msie && $.browser.version < 7.0) {
       document.createElement('abbr');
     }
+  }
+
+  if (!am_running_tests()) {
+    wear_blue_and_white_pajamas();
   }
 
   until_we_re_ready();
