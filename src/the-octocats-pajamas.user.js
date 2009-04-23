@@ -400,7 +400,7 @@
           // get_network(repo);
         });
 
-        if (!am_running_tests()) {
+        if (!_8cpj_am_running_tests()) {
           load_latest_pajamas();
         }
       }
@@ -436,10 +436,6 @@
     head.appendChild(style);
   };
   
-  var am_running_tests = function() {
-    return document['__running_tests'];
-  };
-
   /*
    * timeago: a jQuery plugin, version: 0.7.1 (2009-02-18)
    * @requires jQuery v1.2 or later
@@ -566,10 +562,14 @@
     }
   }
 
-  if (!am_running_tests()) {
+  if (!_8cpj_am_running_tests()) {
     wear_blue_and_white_pajamas();
   }
 
   until_we_re_ready();
 
 })();
+
+function _8cpj_am_running_tests() {
+  return document['__running_tests'];
+};
