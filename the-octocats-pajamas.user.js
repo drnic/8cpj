@@ -273,7 +273,8 @@
 // @namespace     http://whytheluckystiff.net/greasy/
 // @description   An experimental Github user page, organizing your repos. 
 // @include       https://github.com/
-// @include       https://github.com/home
+// @include       https://github.com/dashboard
+// @include       https://github.com/dashboard/*
 // @include       http://github.com/8cpj
 // @version       1.1
 // ==/UserScript==
